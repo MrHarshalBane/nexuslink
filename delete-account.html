@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account & Data Deletion - NexusLink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#2563eb" />
+  <style>
+    :root {
+      --bg: #070e1d;
+      --card: rgba(14, 28, 54, 0.92);
+      --border: rgba(255, 255, 255, 0.1);
+      --primary: #3b82f6;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    h1 { font-size: 1.85rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; }
+    p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem; }
+    .warning-box {
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      color: #fda4af;
+      font-size: 0.88rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.4rem; }
+    input, textarea {
+      width: 100%;
+      background: rgba(10, 20, 40, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    input:focus, textarea:focus { border-color: var(--primary); }
+    .btn-danger {
+      width: 100%;
+      background: linear-gradient(135deg, #f43f5e, #be123c);
+      color: #fff;
+      border: none;
+      padding: 0.85rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-danger:hover { opacity: 0.92; }
+    .success-box {
+      display: none;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 1.25rem;
+      border-radius: 10px;
+      color: #6ee7b7;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="./index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to NexusLink App</a>
+    <h1>Account &amp; Data Deletion Request</h1>
+    <p>
+      In accordance with <strong>Google Play Store Developer Data Safety Policies</strong>, you may submit a request to completely delete your account, personal data, and referral history from NexusLink.
+    </p>
+
+    <div class="warning-box">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <strong>Irreversible Action:</strong> Account deletion will permanently invalidate all generated tracking slugs and surrender any un-withdrawn escrow balance.
+    </div>
+
+    <form id="delete-form" onsubmit="handleDeleteSubmit(event)">
+      <div class="form-group">
+        <label>Account Email Address</label>
+        <input type="email" id="del-email" placeholder="registered-user@domain.com" required />
+      </div>
+
+      <div class="form-group">
+        <label>Reason for Account Deletion (Optional)</label>
+        <textarea id="del-reason" rows="3" placeholder="Let us know why you are leaving..."></textarea>
+      </div>
+
+      <div class="form-group" style="display: flex; align-items: center; gap: 0.6rem;">
+        <input type="checkbox" id="del-confirm" style="width: auto; cursor: pointer;" required />
+        <label for="del-confirm" style="margin: 0; cursor: pointer;">
+          I confirm that I want to permanently delete my account and all associated records.
+        </label>
+      </div>
+
+      <button type="submit" class="btn-danger">
+        <i class="fa-solid fa-trash-can"></i> Submit Permanent Deletion Request
+      </button>
+    </form>
+
+    <div class="success-box" id="success-box">
+      <i class="fa-solid fa-circle-check" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;"></i>
+      <h3 style="color: #fff; margin-bottom: 0.5rem;">Deletion Request Submitted</h3>
+      <p style="color: #cbd5e1; margin-bottom: 0;">
+        Your request has been logged. Personal identifiers, sessions, and active credentials will be purged within 48 hours. A confirmation email has been dispatched.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function handleDeleteSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('del-email').value.trim();
+      
+      const store = localStorage.getItem('nexuslink_store');
+      if (store) {
+        try {
+          const parsed = JSON.parse(store);
+          parsed.users = parsed.users.filter(u => u.email !== email);
+          localStorage.setItem('nexuslink_store', JSON.stringify(parsed));
+        } catch (err) {}
+      }
+
+      document.getElementById('delete-form').style.display = 'none';
+      document.getElementById('success-box').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

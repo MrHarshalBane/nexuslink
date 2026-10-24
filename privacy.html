@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - NexusLink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#2563eb" />
+  <style>
+    :root {
+      --bg: #070e1d;
+      --card: rgba(14, 28, 54, 0.92);
+      --border: rgba(255, 255, 255, 0.1);
+      --primary: #3b82f6;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; }
+    .meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+    h2 { font-size: 1.25rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.75rem; color: #fff; }
+    p, li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: var(--primary);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="./index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to NexusLink App</a>
+    <h1>NexusLink Privacy Policy</h1>
+    <div class="meta">
+      <span class="badge">Google Play Store &amp; GDPR Compliant</span> &bull; Last Updated: October 24, 2026
+    </div>
+
+    <p>
+      NexusLink ("we", "our", or "the Platform") provides an open, decentralized community seeding and anti-fraud affiliate network. We are firmly committed to protecting your privacy and upholding transparent data practices. This policy outlines how information is handled when using our website and mobile application.
+    </p>
+
+    <h2>1. Information We Collect</h2>
+    <p>To deliver automated affiliate escrow settlements and combat automated bot abuse, we collect minimal necessary data:</p>
+    <ul>
+      <li><strong>Account Details:</strong> Email address, pseudonym/organization name, and encrypted credentials.</li>
+      <li><strong>Wallet &amp; Payment Data:</strong> Public cryptographic wallet address or UPI/INR billing identifiers for issuing authorized payouts.</li>
+      <li><strong>Fraud Detection Telemetry:</strong> Anonymized HTTP headers, client IP addresses (evaluated for datacenter ASNs and VPN/Tor subnets), and user-agent strings strictly for malicious bot suppression.</li>
+    </ul>
+
+    <h2>2. How We Use Collected Information</h2>
+    <ul>
+      <li>To authenticate and manage promoter and advertiser account vaults.</li>
+      <li>To enforce smart-escrow payouts (60% promoter reward / 40% platform treasury split).</li>
+      <li>To intercept and quarantine automated click-fraud, scrapers, and headless browsers.</li>
+      <li>To generate double-entry financial journal logs and provide auditability.</li>
+    </ul>
+
+    <h2>3. Data Sharing &amp; Third Parties</h2>
+    <p>
+      We <strong>never sell or monetize your personal information</strong>. Data is only processed through secure infrastructure providers solely required to keep the service operational and combat fraudulent abuse.
+    </p>
+
+    <h2>4. Data Retention &amp; Security</h2>
+    <p>
+      We employ industry-standard encryption protocols (TLS/HTTPS), salted password hashing, and strict database access controls. Audit trail logs are preserved to satisfy financial accountability regulations.
+    </p>
+
+    <h2>5. User Rights &amp; Account Deletion</h2>
+    <p>
+      Under Google Play Store requirements and international data protection laws (GDPR/CCPA), users maintain the unconditional right to access, export, or permanently erase their personal account data at any time.
+    </p>
+    <p>
+      To delete your account and associated personal identifiers, visit our <a href="./delete-account.html" style="color: var(--primary); text-decoration: underline;">Account Deletion Portal</a> or email us directly at <strong>privacy@nexuslink.network</strong>.
+    </p>
+
+    <h2>6. Contact Us</h2>
+    <p>
+      For privacy questions or data requests, contact our Data Protection Officer at:
+      <br/>
+      Email: <strong>privacy@nexuslink.network</strong>
+    </p>
+  </div>
+</body>
+</html>
